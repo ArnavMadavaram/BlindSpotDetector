@@ -4,6 +4,7 @@ import time
 import numpy as np
 import random
 import shutil
+import csv
 
 # === CLEAN OUTPUT FOLDERS ===
 output_folders = [
@@ -12,7 +13,8 @@ output_folders = [
     "output/depth_npy",
     "output/segmentation",
     "output/segmentation_npy",
-    "output/dvs_npy"
+    "output/dvs_npy",
+    "output/radar_data"  # NEW radar output
 ]
 for folder in output_folders:
     if os.path.exists(folder):
@@ -35,7 +37,7 @@ world.set_weather(carla.WeatherParameters(
 blueprints = world.get_blueprint_library()
 spawn_points = world.get_map().get_spawn_points()
 
-# === FORCE EGO VEHICLE TO A KNOWN BUSY LOCATION ===
+# === EGO VEHICLE ===
 central_spawn = spawn_points[10] if len(spawn_points) > 10 else random.choice(spawn_points)
 vehicle_bp = blueprints.filter('vehicle.tesla.model3')[0]
 vehicle = world.try_spawn_actor(vehicle_bp, central_spawn)
@@ -43,7 +45,7 @@ if not vehicle:
     raise RuntimeError("Failed to spawn ego vehicle.")
 vehicle.set_autopilot(True)
 
-# === SPAWN TRAFFIC NEARBY ===
+# === TRAFFIC ===
 traffic_bps = blueprints.filter('vehicle.*')
 spawned_vehicles = []
 used_points = set()
@@ -89,7 +91,7 @@ depth_bp.set_attribute('fov', '90')
 depth_sensor = world.spawn_actor(depth_bp, transform, attach_to=vehicle)
 depth_sensor.listen(process_depth)
 
-# === SEMANTIC SEGMENTATION ===
+# === SEMANTIC SEGMENTATION CAMERA ===
 def process_seg(img):
     img.save_to_disk(f"output/segmentation/seg_{img.frame}.png", carla.ColorConverter.CityScapesPalette)
     arr = np.frombuffer(img.raw_data, dtype=np.uint8).reshape((img.height, img.width, 4))
@@ -113,12 +115,40 @@ dvs_bp.set_attribute('fov', '90')
 dvs = world.spawn_actor(dvs_bp, transform, attach_to=vehicle)
 dvs.listen(process_dvs)
 
-# === RECORD ===
+# === RADAR SENSOR ===
+radar_output_path = "output/radar_data/radar.csv"
+with open(radar_output_path, 'w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(["frame", "object_id", "depth", "velocity", "azimuth", "altitude"])
+
+def process_radar(radar_data):
+    with open(radar_output_path, 'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        for i, detection in enumerate(radar_data):
+            writer.writerow([
+                radar_data.frame,
+                i,
+                detection.depth,
+                detection.velocity,
+                detection.azimuth,
+                detection.altitude
+            ])
+
+radar_bp = blueprints.find('sensor.other.radar')
+radar_bp.set_attribute('horizontal_fov', '30')
+radar_bp.set_attribute('vertical_fov', '10')
+radar_bp.set_attribute('range', '50')
+
+radar_transform = carla.Transform(carla.Location(x=1.5, z=2.4))
+radar = world.spawn_actor(radar_bp, radar_transform, attach_to=vehicle)
+radar.listen(process_radar)
+
+# === RECORDING ===
 print("📸 Recording in busy area for 60 seconds...")
 time.sleep(60)
 
 # === CLEANUP ===
-for sensor in [rgb, depth_sensor, seg, dvs]:
+for sensor in [rgb, depth_sensor, seg, dvs, radar]:
     sensor.stop()
     sensor.destroy()
 
@@ -126,4 +156,4 @@ vehicle.destroy()
 for npc in spawned_vehicles:
     npc.destroy()
 
-print("✅ Done! Check the output/ folder for images and raw data.")
+print("✅ Done! Check the output/ folder for images and radar data.")
