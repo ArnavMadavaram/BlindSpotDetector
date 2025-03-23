@@ -11,19 +11,14 @@ def load_and_preprocess_rgb(file_path, img_size=(256, 256)):
     img = cv2.imread(file_path)
     img = cv2.resize(img, img_size)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    img = img.astype("float32") / 255.0
-    return img
+    return img.astype("float32") / 255.0
 
 #Depth Proces
 def load_and_preprocess_depth(file_path, img_size=(256,256), max_depth=3000.0):
-    if file_path.endswith('.npy'):
-        depth = np.load(file_path)
-    else:
-        depth = cv2.imread(file_path, cv2.IMREAD_UNCHANGED)
+    depth = np.load(file_path)
     depth = cv2.resize(depth, img_size)
     depth = depth.astype("float32") / max_depth
-    depth = np.expand_dims(depth, axis=-1)
-    return depth
+    return np.expand_dims(depth, axis=-1)
 
 #SS Process
 def load_and_preprocess_semantic(file_path, img_size=(256,256)):
@@ -32,35 +27,72 @@ def load_and_preprocess_semantic(file_path, img_size=(256,256)):
     else:
         seg = cv2.imread(file_path, cv2.IMREAD_GRAYSCALE)
     seg = cv2.resize(seg, img_size, interpolation=cv2.INTER_NEAREST)
-    seg = seg.astype("int32")
-    seg = np.expand_dims(seg, axis=-1)
-    return seg
+    return np.expand_dims(seg.astype("int32"), axis=-1)
 
 #Radar Process
 def load_and_preprocess_radar_for_frame(frame_filename, radar_df, img_size=(256,256), max_radar_depth=3000.0):
-    base = os.path.splitext(frame_filename)[0]   # "rgb_285379"
-    num_str = base.split('_')[-1]                  # "285379"
-    frame_num = int(num_str)
-    
-    # Filter DataFrame for this frame
+    base = os.path.splitext(frame_filename)[0]
+    frame_num = int(base.split('_')[-1])
     frame_data = radar_df[radar_df['frame'] == frame_num]
-    if len(frame_data) == 0:
-        radar_value = 0.0
-    else:
-        radar_value = frame_data['depth'].mean()
-    normalized_value = radar_value / max_radar_depth
-    # Create a constant image of size img_size with the normalized radar value
-    radar_img = np.full(img_size, normalized_value, dtype="float32")
-    radar_img = np.expand_dims(radar_img, axis=-1)
-    return radar_img
+    radar_value = frame_data['depth'].mean() if len(frame_data) else 0.0
+    normalized = radar_value / max_radar_depth
+    radar_img = np.full(img_size, normalized, dtype="float32")
+    return np.expand_dims(radar_img, axis=-1)
 
 
 #STEP 2:: Fuse using Deep Learning into a tensor
-def create_fused_tensor(rgb_img, depth_img, radar_img, semantic_img):
-   # For raw semantic labels:
-   #RGB: 3 channels Depth: 1 channel Radar: 1 channel Semantic: 1 channel Total: 6 channels.
-    fused_tensor = np.concatenate([rgb_img, depth_img, radar_img, semantic_img], axis=-1)
-    return fused_tensor
+def create_fused_tensor(rgb, depth, radar, semantic):
+    return np.concatenate([rgb, depth, radar, semantic], axis=-1)
+
+#STEP 3: Main Function
+def main():
+    # File paths
+    rgb_dir = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\rgb"
+    depth_dir = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\depth_npy"
+    seg_npy_dir = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\segmentation_npy"
+    seg_png_dir = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\segmentation"
+    radar_file = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\radar_data\radar.csv"
+    log_path = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\fused_output_log.txt"
+
+    # Load file lists
+    rgb_files = sorted(glob.glob(os.path.join(rgb_dir, "*.png")))
+    depth_files = sorted(glob.glob(os.path.join(depth_dir, "*.npy")))
+    semantic_files = sorted(glob.glob(os.path.join(seg_npy_dir, "*.npy"))) or \
+                     sorted(glob.glob(os.path.join(seg_png_dir, "*.png")))
+
+    # Load radar CSV
+    radar_df = pd.read_csv(radar_file)
+
+    # Use the minimum number of frames across all sources
+    num_frames = min(len(rgb_files), len(depth_files), len(semantic_files))
+    print(f"Number of frames found: {num_frames}")
+
+    # Open output log file
+    with open(log_path, 'w', encoding='utf-8') as log:
+        for i in range(num_frames):
+            rgb_img = load_and_preprocess_rgb(rgb_files[i])
+            depth_img = load_and_preprocess_depth(depth_files[i])
+            semantic_img = load_and_preprocess_semantic(semantic_files[i])
+            radar_img = load_and_preprocess_radar_for_frame(os.path.basename(rgb_files[i]), radar_df)
+
+            fused = create_fused_tensor(rgb_img, depth_img, radar_img, semantic_img)
+            frame_id = os.path.basename(rgb_files[i])
+            c = fused[128, 128]
+            t = fused[0, 0]
+
+            summary = (
+                f"\n=== Frame {frame_id} ===\n"
+                f"Fused tensor shape: {fused.shape}\n\n"
+                f"Center -> RGB: {c[0]:.2f},{c[1]:.2f},{c[2]:.2f} | D: {c[3]:.2f} | R: {c[4]:.2f} | S: {int(c[5])}\n"
+                f"Top-Left -> RGB: {t[0]:.2f},{t[1]:.2f},{t[2]:.2f} | D: {t[3]:.2f} | R: {t[4]:.2f} | S: {int(t[5])}\n"
+            )
+
+            print(summary)
+            log.write(summary)
+
+if __name__ == "__main__":
+    main()
+
 
 
 
