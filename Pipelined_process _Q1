@@ -1,0 +1,13 @@
+#step 1: Preprocessing
+#rgb Process
+import cv2
+import numpy as np
+import glob
+import os
+
+def load_and_preprocess_rgb(file_path, img_size=(256, 256)):
+    img = cv2.imread(file_path)
+    img = cv2.resize(img, img_size)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = img.astype("float32") / 255.0
+    return img
