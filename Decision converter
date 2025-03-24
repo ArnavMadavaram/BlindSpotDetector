@@ -26,3 +26,41 @@ class BlindSpotDetector(nn.Module):
         x = x.view(x.size(0), -1)
         x = torch.sigmoid(self.fc(x))
         return x
+
+# SImulated Function
+def predict_blindspot(fused_tensor_np, model):
+    # Simulate detection by random chance for demo purposes
+    prob = random.uniform(0.3, 0.8)  # Simulated probability
+    result = "Object Detected" if prob >= 0.5 else "No Object Detected"
+    return prob, result
+
+# Main Script
+def main():
+    # Paths
+    fused_tensor_dir = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\fused_tensors"
+    output_log_file = r"C:\Users\sam42\Car Simulation\blindspot_simulation\output\blindspot_predictions.txt"
+
+    # Load all .npy files
+    tensor_files = sorted(glob.glob(os.path.join(fused_tensor_dir, "*.npy")))
+
+    # Load model structure (not trained)
+    model = BlindSpotDetector()
+
+    # Log predictions
+    with open(output_log_file, 'w', encoding='utf-8') as log:
+        for tensor_path in tensor_files:
+            tensor = np.load(tensor_path)
+            prob, decision = predict_blindspot(tensor, model)
+
+            frame_name = os.path.basename(tensor_path).replace(".npy", "")
+            summary = (
+                f"\n=== {frame_name} ===\n"
+                f"Prediction Probability: {prob:.2f}\n"
+                f"Decision: {decision}\n"
+            )
+
+            print(summary)
+            log.write(summary)
+
+if __name__ == "__main__":
+    main()
