@@ -1,0 +1,1018 @@
+C:\Users\sam42\Proccessing_Tensor_Part1\.venv\Scripts\python.exe C:\Users\sam42\Proccessing_Tensor_Part1\Part1.py 
+
+=== rgb_285377 ===
+Prediction Probability: 0.38
+Decision: No Object Detected
+
+
+=== rgb_285378 ===
+Prediction Probability: 0.55
+Decision: Object Detected
+
+
+=== rgb_285385 ===
+Prediction Probability: 0.76
+Decision: Object Detected
+
+
+=== rgb_285389 ===
+Prediction Probability: 0.36
+Decision: No Object Detected
+
+
+=== rgb_285394 ===
+Prediction Probability: 0.47
+Decision: No Object Detected
+
+
+=== rgb_285398 ===
+Prediction Probability: 0.76
+Decision: Object Detected
+
+
+=== rgb_285403 ===
+Prediction Probability: 0.80
+Decision: Object Detected
+
+
+=== rgb_285408 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_285413 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_285417 ===
+Prediction Probability: 0.32
+Decision: No Object Detected
+
+
+=== rgb_285422 ===
+Prediction Probability: 0.39
+Decision: No Object Detected
+
+
+=== rgb_285427 ===
+Prediction Probability: 0.63
+Decision: Object Detected
+
+
+=== rgb_285431 ===
+Prediction Probability: 0.77
+Decision: Object Detected
+
+
+=== rgb_285436 ===
+Prediction Probability: 0.53
+Decision: Object Detected
+
+
+=== rgb_285440 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_285445 ===
+Prediction Probability: 0.35
+Decision: No Object Detected
+
+
+=== rgb_285449 ===
+Prediction Probability: 0.59
+Decision: Object Detected
+
+
+=== rgb_285454 ===
+Prediction Probability: 0.61
+Decision: Object Detected
+
+
+=== rgb_285459 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_285463 ===
+Prediction Probability: 0.66
+Decision: Object Detected
+
+
+=== rgb_285468 ===
+Prediction Probability: 0.69
+Decision: Object Detected
+
+
+=== rgb_285472 ===
+Prediction Probability: 0.55
+Decision: Object Detected
+
+
+=== rgb_285477 ===
+Prediction Probability: 0.36
+Decision: No Object Detected
+
+
+=== rgb_285482 ===
+Prediction Probability: 0.57
+Decision: Object Detected
+
+
+=== rgb_285486 ===
+Prediction Probability: 0.60
+Decision: Object Detected
+
+
+=== rgb_285491 ===
+Prediction Probability: 0.49
+Decision: No Object Detected
+
+
+=== rgb_285496 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_285501 ===
+Prediction Probability: 0.47
+Decision: No Object Detected
+
+
+=== rgb_285506 ===
+Prediction Probability: 0.43
+Decision: No Object Detected
+
+
+=== rgb_285511 ===
+Prediction Probability: 0.71
+Decision: Object Detected
+
+
+=== rgb_285516 ===
+Prediction Probability: 0.40
+Decision: No Object Detected
+
+
+=== rgb_285521 ===
+Prediction Probability: 0.33
+Decision: No Object Detected
+
+
+=== rgb_285526 ===
+Prediction Probability: 0.66
+Decision: Object Detected
+
+
+=== rgb_285531 ===
+Prediction Probability: 0.57
+Decision: Object Detected
+
+
+=== rgb_285536 ===
+Prediction Probability: 0.71
+Decision: Object Detected
+
+
+=== rgb_285540 ===
+Prediction Probability: 0.33
+Decision: No Object Detected
+
+
+=== rgb_285545 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_285550 ===
+Prediction Probability: 0.76
+Decision: Object Detected
+
+
+=== rgb_285555 ===
+Prediction Probability: 0.60
+Decision: Object Detected
+
+
+=== rgb_285560 ===
+Prediction Probability: 0.56
+Decision: Object Detected
+
+
+=== rgb_285565 ===
+Prediction Probability: 0.80
+Decision: Object Detected
+
+
+=== rgb_285569 ===
+Prediction Probability: 0.44
+Decision: No Object Detected
+
+
+=== rgb_285574 ===
+Prediction Probability: 0.44
+Decision: No Object Detected
+
+
+=== rgb_285578 ===
+Prediction Probability: 0.76
+Decision: Object Detected
+
+
+=== rgb_285583 ===
+Prediction Probability: 0.68
+Decision: Object Detected
+
+
+=== rgb_285589 ===
+Prediction Probability: 0.62
+Decision: Object Detected
+
+
+=== rgb_285594 ===
+Prediction Probability: 0.50
+Decision: Object Detected
+
+
+=== rgb_285599 ===
+Prediction Probability: 0.71
+Decision: Object Detected
+
+
+=== rgb_285603 ===
+Prediction Probability: 0.63
+Decision: Object Detected
+
+
+=== rgb_285608 ===
+Prediction Probability: 0.74
+Decision: Object Detected
+
+
+=== rgb_285613 ===
+Prediction Probability: 0.77
+Decision: Object Detected
+
+
+=== rgb_285618 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_285623 ===
+Prediction Probability: 0.54
+Decision: Object Detected
+
+
+=== rgb_285627 ===
+Prediction Probability: 0.46
+Decision: No Object Detected
+
+
+=== rgb_285631 ===
+Prediction Probability: 0.78
+Decision: Object Detected
+
+
+=== rgb_285636 ===
+Prediction Probability: 0.39
+Decision: No Object Detected
+
+
+=== rgb_285641 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_285645 ===
+Prediction Probability: 0.71
+Decision: Object Detected
+
+
+=== rgb_285650 ===
+Prediction Probability: 0.37
+Decision: No Object Detected
+
+
+=== rgb_285655 ===
+Prediction Probability: 0.70
+Decision: Object Detected
+
+
+=== rgb_285660 ===
+Prediction Probability: 0.67
+Decision: Object Detected
+
+
+=== rgb_285664 ===
+Prediction Probability: 0.68
+Decision: Object Detected
+
+
+=== rgb_285669 ===
+Prediction Probability: 0.31
+Decision: No Object Detected
+
+
+=== rgb_285674 ===
+Prediction Probability: 0.71
+Decision: Object Detected
+
+
+=== rgb_285678 ===
+Prediction Probability: 0.53
+Decision: Object Detected
+
+
+=== rgb_285683 ===
+Prediction Probability: 0.40
+Decision: No Object Detected
+
+
+=== rgb_285687 ===
+Prediction Probability: 0.77
+Decision: Object Detected
+
+
+=== rgb_285691 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_285696 ===
+Prediction Probability: 0.31
+Decision: No Object Detected
+
+
+=== rgb_285700 ===
+Prediction Probability: 0.35
+Decision: No Object Detected
+
+
+=== rgb_285704 ===
+Prediction Probability: 0.77
+Decision: Object Detected
+
+
+=== rgb_285708 ===
+Prediction Probability: 0.31
+Decision: No Object Detected
+
+
+=== rgb_285712 ===
+Prediction Probability: 0.39
+Decision: No Object Detected
+
+
+=== rgb_285717 ===
+Prediction Probability: 0.41
+Decision: No Object Detected
+
+
+=== rgb_285721 ===
+Prediction Probability: 0.58
+Decision: Object Detected
+
+
+=== rgb_285726 ===
+Prediction Probability: 0.42
+Decision: No Object Detected
+
+
+=== rgb_285731 ===
+Prediction Probability: 0.79
+Decision: Object Detected
+
+
+=== rgb_285735 ===
+Prediction Probability: 0.54
+Decision: Object Detected
+
+
+=== rgb_285740 ===
+Prediction Probability: 0.62
+Decision: Object Detected
+
+
+=== rgb_285744 ===
+Prediction Probability: 0.48
+Decision: No Object Detected
+
+
+=== rgb_285748 ===
+Prediction Probability: 0.78
+Decision: Object Detected
+
+
+=== rgb_285753 ===
+Prediction Probability: 0.57
+Decision: Object Detected
+
+
+=== rgb_285758 ===
+Prediction Probability: 0.74
+Decision: Object Detected
+
+
+=== rgb_285763 ===
+Prediction Probability: 0.53
+Decision: Object Detected
+
+
+=== rgb_285767 ===
+Prediction Probability: 0.30
+Decision: No Object Detected
+
+
+=== rgb_285772 ===
+Prediction Probability: 0.42
+Decision: No Object Detected
+
+
+=== rgb_285777 ===
+Prediction Probability: 0.33
+Decision: No Object Detected
+
+
+=== rgb_285782 ===
+Prediction Probability: 0.48
+Decision: No Object Detected
+
+
+=== rgb_285786 ===
+Prediction Probability: 0.67
+Decision: Object Detected
+
+
+=== rgb_285791 ===
+Prediction Probability: 0.65
+Decision: Object Detected
+
+
+=== rgb_285795 ===
+Prediction Probability: 0.33
+Decision: No Object Detected
+
+
+=== rgb_285799 ===
+Prediction Probability: 0.52
+Decision: Object Detected
+
+
+=== rgb_285804 ===
+Prediction Probability: 0.63
+Decision: Object Detected
+
+
+=== rgb_285808 ===
+Prediction Probability: 0.78
+Decision: Object Detected
+
+
+=== rgb_285813 ===
+Prediction Probability: 0.35
+Decision: No Object Detected
+
+
+=== rgb_285817 ===
+Prediction Probability: 0.78
+Decision: Object Detected
+
+
+=== rgb_285822 ===
+Prediction Probability: 0.78
+Decision: Object Detected
+
+
+=== rgb_285826 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_285831 ===
+Prediction Probability: 0.32
+Decision: No Object Detected
+
+
+=== rgb_285835 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_285840 ===
+Prediction Probability: 0.32
+Decision: No Object Detected
+
+
+=== rgb_285844 ===
+Prediction Probability: 0.59
+Decision: Object Detected
+
+
+=== rgb_285849 ===
+Prediction Probability: 0.67
+Decision: Object Detected
+
+
+=== rgb_285853 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_285858 ===
+Prediction Probability: 0.70
+Decision: Object Detected
+
+
+=== rgb_285862 ===
+Prediction Probability: 0.66
+Decision: Object Detected
+
+
+=== rgb_285867 ===
+Prediction Probability: 0.47
+Decision: No Object Detected
+
+
+=== rgb_285871 ===
+Prediction Probability: 0.42
+Decision: No Object Detected
+
+
+=== rgb_285876 ===
+Prediction Probability: 0.46
+Decision: No Object Detected
+
+
+=== rgb_285880 ===
+Prediction Probability: 0.44
+Decision: No Object Detected
+
+
+=== rgb_285885 ===
+Prediction Probability: 0.35
+Decision: No Object Detected
+
+
+=== rgb_285889 ===
+Prediction Probability: 0.40
+Decision: No Object Detected
+
+
+=== rgb_285894 ===
+Prediction Probability: 0.49
+Decision: No Object Detected
+
+
+=== rgb_285899 ===
+Prediction Probability: 0.70
+Decision: Object Detected
+
+
+=== rgb_285903 ===
+Prediction Probability: 0.70
+Decision: Object Detected
+
+
+=== rgb_285907 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_285911 ===
+Prediction Probability: 0.76
+Decision: Object Detected
+
+
+=== rgb_285916 ===
+Prediction Probability: 0.48
+Decision: No Object Detected
+
+
+=== rgb_285920 ===
+Prediction Probability: 0.53
+Decision: Object Detected
+
+
+=== rgb_285924 ===
+Prediction Probability: 0.38
+Decision: No Object Detected
+
+
+=== rgb_285928 ===
+Prediction Probability: 0.42
+Decision: No Object Detected
+
+
+=== rgb_285932 ===
+Prediction Probability: 0.77
+Decision: Object Detected
+
+
+=== rgb_285937 ===
+Prediction Probability: 0.64
+Decision: Object Detected
+
+
+=== rgb_285941 ===
+Prediction Probability: 0.61
+Decision: Object Detected
+
+
+=== rgb_285945 ===
+Prediction Probability: 0.63
+Decision: Object Detected
+
+
+=== rgb_285949 ===
+Prediction Probability: 0.60
+Decision: Object Detected
+
+
+=== rgb_285954 ===
+Prediction Probability: 0.34
+Decision: No Object Detected
+
+
+=== rgb_285958 ===
+Prediction Probability: 0.44
+Decision: No Object Detected
+
+
+=== rgb_285962 ===
+Prediction Probability: 0.55
+Decision: Object Detected
+
+
+=== rgb_285966 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_285970 ===
+Prediction Probability: 0.74
+Decision: Object Detected
+
+
+=== rgb_285975 ===
+Prediction Probability: 0.71
+Decision: Object Detected
+
+
+=== rgb_285979 ===
+Prediction Probability: 0.37
+Decision: No Object Detected
+
+
+=== rgb_285983 ===
+Prediction Probability: 0.58
+Decision: Object Detected
+
+
+=== rgb_285987 ===
+Prediction Probability: 0.41
+Decision: No Object Detected
+
+
+=== rgb_285991 ===
+Prediction Probability: 0.71
+Decision: Object Detected
+
+
+=== rgb_285996 ===
+Prediction Probability: 0.65
+Decision: Object Detected
+
+
+=== rgb_286001 ===
+Prediction Probability: 0.56
+Decision: Object Detected
+
+
+=== rgb_286005 ===
+Prediction Probability: 0.35
+Decision: No Object Detected
+
+
+=== rgb_286009 ===
+Prediction Probability: 0.48
+Decision: No Object Detected
+
+
+=== rgb_286013 ===
+Prediction Probability: 0.33
+Decision: No Object Detected
+
+
+=== rgb_286018 ===
+Prediction Probability: 0.47
+Decision: No Object Detected
+
+
+=== rgb_286022 ===
+Prediction Probability: 0.56
+Decision: Object Detected
+
+
+=== rgb_286026 ===
+Prediction Probability: 0.32
+Decision: No Object Detected
+
+
+=== rgb_286031 ===
+Prediction Probability: 0.79
+Decision: Object Detected
+
+
+=== rgb_286035 ===
+Prediction Probability: 0.30
+Decision: No Object Detected
+
+
+=== rgb_286040 ===
+Prediction Probability: 0.43
+Decision: No Object Detected
+
+
+=== rgb_286044 ===
+Prediction Probability: 0.49
+Decision: No Object Detected
+
+
+=== rgb_286049 ===
+Prediction Probability: 0.65
+Decision: Object Detected
+
+
+=== rgb_286053 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_286058 ===
+Prediction Probability: 0.56
+Decision: Object Detected
+
+
+=== rgb_286062 ===
+Prediction Probability: 0.49
+Decision: No Object Detected
+
+
+=== rgb_286066 ===
+Prediction Probability: 0.70
+Decision: Object Detected
+
+
+=== rgb_286071 ===
+Prediction Probability: 0.34
+Decision: No Object Detected
+
+
+=== rgb_286075 ===
+Prediction Probability: 0.69
+Decision: Object Detected
+
+
+=== rgb_286080 ===
+Prediction Probability: 0.43
+Decision: No Object Detected
+
+
+=== rgb_286084 ===
+Prediction Probability: 0.77
+Decision: Object Detected
+
+
+=== rgb_286088 ===
+Prediction Probability: 0.59
+Decision: Object Detected
+
+
+=== rgb_286093 ===
+Prediction Probability: 0.80
+Decision: Object Detected
+
+
+=== rgb_286097 ===
+Prediction Probability: 0.37
+Decision: No Object Detected
+
+
+=== rgb_286101 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_286106 ===
+Prediction Probability: 0.62
+Decision: Object Detected
+
+
+=== rgb_286110 ===
+Prediction Probability: 0.50
+Decision: Object Detected
+
+
+=== rgb_286114 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_286118 ===
+Prediction Probability: 0.46
+Decision: No Object Detected
+
+
+=== rgb_286122 ===
+Prediction Probability: 0.74
+Decision: Object Detected
+
+
+=== rgb_286126 ===
+Prediction Probability: 0.32
+Decision: No Object Detected
+
+
+=== rgb_286130 ===
+Prediction Probability: 0.35
+Decision: No Object Detected
+
+
+=== rgb_286135 ===
+Prediction Probability: 0.53
+Decision: Object Detected
+
+
+=== rgb_286139 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_286143 ===
+Prediction Probability: 0.70
+Decision: Object Detected
+
+
+=== rgb_286147 ===
+Prediction Probability: 0.43
+Decision: No Object Detected
+
+
+=== rgb_286152 ===
+Prediction Probability: 0.74
+Decision: Object Detected
+
+
+=== rgb_286156 ===
+Prediction Probability: 0.64
+Decision: Object Detected
+
+
+=== rgb_286160 ===
+Prediction Probability: 0.66
+Decision: Object Detected
+
+
+=== rgb_286164 ===
+Prediction Probability: 0.36
+Decision: No Object Detected
+
+
+=== rgb_286168 ===
+Prediction Probability: 0.32
+Decision: No Object Detected
+
+
+=== rgb_286173 ===
+Prediction Probability: 0.34
+Decision: No Object Detected
+
+
+=== rgb_286177 ===
+Prediction Probability: 0.77
+Decision: Object Detected
+
+
+=== rgb_286181 ===
+Prediction Probability: 0.38
+Decision: No Object Detected
+
+
+=== rgb_286185 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_286189 ===
+Prediction Probability: 0.60
+Decision: Object Detected
+
+
+=== rgb_286193 ===
+Prediction Probability: 0.75
+Decision: Object Detected
+
+
+=== rgb_286198 ===
+Prediction Probability: 0.59
+Decision: Object Detected
+
+
+=== rgb_286202 ===
+Prediction Probability: 0.40
+Decision: No Object Detected
+
+
+=== rgb_286207 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_286211 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_286216 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_286220 ===
+Prediction Probability: 0.35
+Decision: No Object Detected
+
+
+=== rgb_286225 ===
+Prediction Probability: 0.37
+Decision: No Object Detected
+
+
+=== rgb_286229 ===
+Prediction Probability: 0.59
+Decision: Object Detected
+
+
+=== rgb_286234 ===
+Prediction Probability: 0.37
+Decision: No Object Detected
+
+
+=== rgb_286238 ===
+Prediction Probability: 0.43
+Decision: No Object Detected
+
+
+=== rgb_286242 ===
+Prediction Probability: 0.61
+Decision: Object Detected
+
+
+=== rgb_286247 ===
+Prediction Probability: 0.53
+Decision: Object Detected
+
+
+=== rgb_286252 ===
+Prediction Probability: 0.78
+Decision: Object Detected
+
+
+=== rgb_286256 ===
+Prediction Probability: 0.32
+Decision: No Object Detected
+
+
+=== rgb_286259 ===
+Prediction Probability: 0.38
+Decision: No Object Detected
+
+
+=== rgb_286264 ===
+Prediction Probability: 0.51
+Decision: Object Detected
+
+
+=== rgb_286269 ===
+Prediction Probability: 0.45
+Decision: No Object Detected
+
+
+=== rgb_286274 ===
+Prediction Probability: 0.73
+Decision: Object Detected
+
+
+=== rgb_286279 ===
+Prediction Probability: 0.72
+Decision: Object Detected
+
+
+=== rgb_286285 ===
+Prediction Probability: 0.51
+Decision: Object Detected
+
+
+Process finished with exit code 0
