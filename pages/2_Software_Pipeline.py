@@ -1,8 +1,11 @@
 import streamlit as st
 import base64
+import os
 
 # --- Set Background ---
 def set_background(jpg_file):
+    if not os.path.exists(jpg_file):
+        return
     with open(jpg_file, "rb") as file:
         encoded_string = base64.b64encode(file.read()).decode()
     css = f"""
@@ -52,7 +55,8 @@ col1, col2 = st.columns(2)
 with col1:
     if st.button("1. Carla Simulation"):
         st.markdown('<div class="section-title">CARLA Simulation for Foggy Weather</div>', unsafe_allow_html=True)
-        st.image("CARLA.png", use_container_width=True)
+        if os.path.exists("CARLA.png"):
+            st.image("CARLA.png", use_container_width=True)
         st.markdown("""
         <div class="section-content">
         In the software workflow, we started with CARLA to simulate adverse weather conditions. Dense fog and rain parameters were configured using CARLA’s weather API. The simulation mimicked real-world low-visibility traffic scenarios.
@@ -70,7 +74,8 @@ with col1:
 with col2:
     if st.button("2. Model Training"):
         st.markdown('<div class="section-title">YOLOv5 Object Detection Training</div>', unsafe_allow_html=True)
-        st.image("Final Output1.png", use_container_width=True)
+        if os.path.exists("Final Output1.png"):
+            st.image("Final Output1.png", use_container_width=True)
         st.markdown("""
         <div class="section-content">
         We employed the YOLOv5 framework to train an object detection model focused on foggy/rainy conditions.
@@ -88,7 +93,8 @@ with col2:
 with col1:
     if st.button("3. Data Preparation"):
         st.markdown('<div class="section-title">Preprocessing RGB & Semantic Segmentation</div>', unsafe_allow_html=True)
-        st.image("Data Processing1.png", use_container_width=True)
+        if os.path.exists("Data Processing1.png"):
+            st.image("Data Processing1.png", use_container_width=True)
         st.markdown("""
         <div class="section-content">
         We processed CARLA-generated RGB images and semantic segmentation maps to align with YOLOv5's training requirements.
@@ -106,7 +112,8 @@ with col1:
 with col2:
     if st.button("4. Streamlit Web App"):
         st.markdown('<div class="section-title">User Interface with Streamlit</div>', unsafe_allow_html=True)
-        st.image("part4.png", use_container_width=True)
+        if os.path.exists("part4.png"):
+            st.image("part4.png", use_container_width=True)
         st.markdown("""
         <div class="section-content">
         The final step was to deploy the trained model in a user-friendly interface using Streamlit.

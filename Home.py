@@ -1,8 +1,11 @@
 import streamlit as st
 import base64
+import os
 
 # Set background
 def set_background(jpg_file):
+    if not os.path.exists(jpg_file):
+        return
     with open(jpg_file, "rb") as file:
         encoded = base64.b64encode(file.read()).decode()
     st.markdown(
