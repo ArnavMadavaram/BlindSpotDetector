@@ -1,16 +1,19 @@
 # BlindSpotDetector
-**Team Dopamine Junkies — IEEE Hackathon 2025**
 
 An AI-based blind spot detection system using CARLA simulation, YOLOv5 object detection, and a Streamlit web interface.
+
+**Live Demo:** https://blindspotdetector-72fgxfssygfgp4amicpndd.streamlit.app/
 
 ---
 
 ## Project Overview
 
 This system detects vehicles and pedestrians in driving scenarios affected by fog and rain. The pipeline:
-1. **CARLA Simulator** generates synthetic training data in adverse weather (fog, rain)
+1. **CARLA Simulator** generates synthetic training data in adverse weather (fog, rain) — *work in progress; see note below*
 2. **YOLOv5** is trained on the CARLA data and used for real-time object detection
 3. **Streamlit** provides an interactive multi-page web interface for demos
+
+> **Note on CARLA integration:** The CARLA-based data collection and custom model training pipeline is functional but not yet connected to the live app. The deployed version uses the general-purpose YOLOv5s model pretrained on COCO. Integrating the CARLA-trained weights (`fogDetector_ui/Trained_Model_2.pt`) into the live deployment is a work in progress.
 
 ---
 
@@ -67,7 +70,7 @@ streamlit run app.py
 
 ## How It Works
 
-### 1. Data Collection — CARLA Simulation
+### 1. Data Collection — CARLA Simulation *(WIP)*
 `blindspot_simulation/car_sim.py` connects to a running CARLA instance and:
 - Spawns an ego vehicle + 25 NPC vehicles in an urban map
 - Applies heavy adverse weather (85% fog density, 80% precipitation)
@@ -78,12 +81,12 @@ streamlit run app.py
   - Radar data (CSV)
 - Outputs a crash sequence at the end for edge case data
 
-### 2. Model Training
+### 2. Model Training *(WIP)*
 `train.py` fine-tunes a **YOLOv5s** model on the CARLA RGB frames.
 Trained weights: `fogDetector_ui/Trained_Model_2.pt`
 
 ### 3. Inference
-The web app uses **YOLOv5s pretrained on COCO** (80 real-world classes) for detection on any driving image. Confidence threshold is adjustable via the sidebar.
+The live web app uses **YOLOv5s pretrained on COCO** (80 real-world classes) for detection on any driving image. Confidence threshold is adjustable via the sidebar.
 
 ---
 
@@ -118,9 +121,6 @@ pip install -r requirements.txt
 
 ---
 
-## Team
+## Author
 
-- Arnav Madavaram
-- Swagath Srinivasan
-- Rishigesh Rajendrakumar
-- Srikar Lanka
+Arnav Madavaram
