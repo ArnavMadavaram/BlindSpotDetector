@@ -9,6 +9,10 @@ import time
 pathlib.WindowsPath = pathlib.PosixPath
 
 st.set_page_config(page_title="Blind Spot Detector", layout="centered", page_icon="🔍")
+
+# Hide Streamlit's auto-generated page navigation
+st.markdown("<style>[data-testid='stSidebarNav'] {display: none;}</style>", unsafe_allow_html=True)
+
 st.markdown("<h1 style='text-align: center; color: #00ffcc;'>🔍 Blind Spot Object Detector</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Upload a driving image to detect vehicles and pedestrians using YOLOv5.</p>", unsafe_allow_html=True)
 st.markdown("---")
