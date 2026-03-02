@@ -1,68 +1,126 @@
 # BlindSpotDetector
-Blind Spot Detector – Dopamine Junkies
-An AI-based Blind Spot Detection System using simulated sensors, weather environments, and real-time deep learning inference.
+**Team Dopamine Junkies — IEEE Hackathon 2025**
 
-Project Overview:
-This project is built for a hackathon and simulates blind spot detection using CARLA-generated data, radar sensors, and crash prediction logic. It integrates multiple sensor modalities (including radar, RGB, and possibly DVS/segmentation in future updates) and uses YOLO-based object detection to identify potential hazards in blind zones.
+An AI-based blind spot detection system using CARLA simulation, YOLOv5 object detection, and a Streamlit web interface.
 
-Repository Structure:
-.idea/ – IDE settings (can be ignored)
-blindspot_simulation/ – Core blind spot simulation logic using CARLA
-fogDetector_ui/ – Streamlit-based UI for object detection and visualization
-.gitattributes – Git LFS support for large dataset files
-.gitignore – Ignores datasets, logs, and output files
-Decision converter – Script or module to convert detection results into actionable decisions
-Pipelined_process_Q1 – Represents the decision or data flow of the detection system
-README.md – This file
-Trained_Model_2.pt – Trained PyTorch model (YOLOv5 format)
-best.pt – Possibly the best checkpoint model (based on validation performance)
-blindspot_simulation.zip – Dataset or simulation environment archive
-train.py – Training script for YOLO or custom model
-Setup Instructions
+---
 
-Clone the repository:
-git clone https://github.com/ArnavMadavaram/BlindSpotDetector.git
-cd BlindSpotDetector
+## Project Overview
 
-Install dependencies:
-Make sure you have Python 3.10 or higher installed. Then run:
+This system detects vehicles and pedestrians in driving scenarios affected by fog and rain. The pipeline:
+1. **CARLA Simulator** generates synthetic training data in adverse weather (fog, rain)
+2. **YOLOv5** is trained on the CARLA data and used for real-time object detection
+3. **Streamlit** provides an interactive multi-page web interface for demos
+
+---
+
+## Project Structure
+
+```
+BlindSpotDetector/
+│
+├── Home.py                          # Main entry point — run this to launch the web app
+│
+├── pages/
+│   ├── 1_Hardware_Overview.py       # Hardware: CARLA simulation and sensor setup
+│   ├── 2_Software_Pipeline.py       # Software: YOLOv5 training and data pipeline
+│   └── 3_Object_Detector.py         # Live detector — upload an image and run inference
+│
+├── fogDetector_ui/
+│   ├── app.py                       # Standalone version of the detector
+│   ├── Trained_Model_2.pt           # YOLOv5 model trained on CARLA foggy data
+│   └── requirements.txt             # Dependencies for standalone app
+│
+├── blindspot_simulation/
+│   └── car_sim.py                   # CARLA simulation script — generates training data
+│
+├── train.py                         # YOLOv5 training script
+├── requirements.txt                 # Dependencies for the multi-page web app
+└── README.md
+```
+
+---
+
+## How to Run
+
+### Multi-page Web App (Recommended)
+
+```bash
 pip install -r requirements.txt
+streamlit run Home.py
+```
 
-If requirements.txt is not available, create it by running:
-pip freeze > requirements.txt
+Navigate between pages using the Streamlit sidebar:
+- **Hardware Overview** — CARLA simulation setup and sensor configuration
+- **Software Pipeline** — YOLOv5 training and data preparation steps
+- **Object Detector** — upload a driving image and detect objects in real time
 
-Run the simulation:
-Navigate to the blindspot_simulation folder and run the appropriate CARLA script. Replace with the actual filename once confirmed.
+### Standalone Detector Only
 
-Launch the UI
-Navigate to the fogDetector_ui folder and run:
+```bash
+cd fogDetector_ui
+pip install -r requirements.txt
 streamlit run app.py
+```
 
-Model Details:
-Model: YOLOv5 (trained on a custom dataset with up to 16 classes)
-Input: Simulated foggy or rainy images
-Output: Bounding boxes and decision output via the Decision converter module
+---
 
-Future Enhancements:
-Add DVS and Semantic Segmentation support
-Improve crash prediction using velocity and trajectory estimation
-Add ROS or real-vehicle integration
-Implement blind spot warning logic for vehicle control systems
+## How It Works
 
-Team Dopamine Junkies:
-Swagath Srinivasan 
-Rishigesh Rajendrakumar
-Srikar Lanka
-Arnav Madavaram
+### 1. Data Collection — CARLA Simulation
+`blindspot_simulation/car_sim.py` connects to a running CARLA instance and:
+- Spawns an ego vehicle + 25 NPC vehicles in an urban map
+- Applies heavy adverse weather (85% fog density, 80% precipitation)
+- Records 60 seconds of multi-sensor data:
+  - RGB camera frames
+  - Depth maps (PNG + NumPy arrays)
+  - Semantic segmentation masks
+  - Radar data (CSV)
+- Outputs a crash sequence at the end for edge case data
 
-Expand to real-world datasets
-Implement LIDAR sensor emulation
-Add vehicle control & warning logic
-Host full app online with Docker support
-License:
+### 2. Model Training
+`train.py` fine-tunes a **YOLOv5s** model on the CARLA RGB frames.
+Trained weights: `fogDetector_ui/Trained_Model_2.pt`
 
-MIT License. See LICENSE file for more information.
+### 3. Inference
+The web app uses **YOLOv5s pretrained on COCO** (80 real-world classes) for detection on any driving image. Confidence threshold is adjustable via the sidebar.
 
-Feedback:
+---
 
-Feel free to open an Issue or submit a Pull Request if you'd like to contribute.
+## Requirements
+
+- Python 3.8+
+- PyTorch
+- Streamlit
+- OpenCV
+- Pillow
+
+```bash
+pip install -r requirements.txt
+```
+
+> **macOS note:** If you get an SSL certificate error on first run, fix it with:
+> ```bash
+> open /Applications/Python\ 3.12/Install\ Certificates.command
+> ```
+
+---
+
+## Tech Stack
+
+| Component | Technology |
+|---|---|
+| Simulation | CARLA 0.10.0 |
+| Object Detection | YOLOv5s (Ultralytics) |
+| Web Interface | Streamlit |
+| Deep Learning | PyTorch |
+| Image Processing | OpenCV, Pillow |
+
+---
+
+## Team
+
+- Arnav Madavaram
+- Swagath Srinivasan
+- Rishigesh Rajendrakumar
+- Srikar Lanka
