@@ -1,9 +1,6 @@
 # BlindSpotDetector
-**Team Dopamine Junkies — IEEE Hackathon 2025**
-
-An AI-based blind spot detection system using CARLA simulation, YOLOv5 object detection, and a Streamlit web interface.
-
 ---
+Project Demo Link: https://blindspotdetector-72fgxfssygfgp4amicpndd.streamlit.app/
 
 ## Project Overview
 
