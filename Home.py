@@ -16,10 +16,11 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ── CSS ──────────────────────────────────────────────────────────────────────
+# ── Font + CSS ───────────────────────────────────────────────────────────────
+st.markdown('<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">', unsafe_allow_html=True)
+
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&display=swap');
 
 [data-testid="stSidebarNav"] {display: none;}
 
@@ -30,7 +31,7 @@ st.markdown("""
 }
 .cs-logo {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 76px;
+    font-size: 150px;
     font-weight: 800;
     color: #00ffcc;
     letter-spacing: -3px;
@@ -119,7 +120,7 @@ st.markdown("""
 # ── Header ───────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="cs-header">
-    <p class="cs-logo">ClearSight</p>
+    <p class="cs-logo" style="font-family:'Space Grotesk',sans-serif;font-size:96px;font-weight:800;color:#00ffcc;letter-spacing:-4px;line-height:1;margin:0;">ClearSight</p>
     <p class="cs-tagline">AI-powered object detection for adverse driving conditions</p>
 </div>
 """, unsafe_allow_html=True)
