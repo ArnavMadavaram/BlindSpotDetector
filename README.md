@@ -2,7 +2,7 @@
 
 An AI-based blind spot detection system using CARLA simulation, YOLOv5 object detection, and a Streamlit web interface.
 
-**Live Demo:** https://blindspotdetector-72fgxfssygfgp4amicpndd.streamlit.app/
+**Live Demo:** https://clearsightaidetector.streamlit.app/
 
 ---
 
