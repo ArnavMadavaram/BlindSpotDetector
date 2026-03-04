@@ -19,25 +19,29 @@ st.set_page_config(
 # ── CSS ──────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&display=swap');
+
 [data-testid="stSidebarNav"] {display: none;}
 
 .cs-header {
-    padding: 8px 0 28px 0;
+    padding: 16px 0 32px 0;
     border-bottom: 1px solid #30363d;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
 }
 .cs-logo {
-    font-size: 44px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 76px;
     font-weight: 800;
     color: #00ffcc;
-    letter-spacing: -1.5px;
+    letter-spacing: -3px;
     line-height: 1;
     margin: 0;
 }
 .cs-tagline {
     color: #8b949e;
-    font-size: 15px;
-    margin: 8px 0 0 0;
+    font-size: 16px;
+    margin: 12px 0 0 0;
+    letter-spacing: 0.1px;
 }
 
 .upload-hint {
